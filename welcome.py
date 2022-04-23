@@ -7,4 +7,7 @@ app = Flask(__name__)
 def hello():
     args = request.args;
 
-    return "Welcome "+ args["username"]
+    if (args and "username" in args.keys()):
+        return "Welcome "+ args["username"]
+    else:
+        return "Sample valid url: \?username=todd"
